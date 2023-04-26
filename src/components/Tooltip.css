@@ -1,0 +1,48 @@
+.tooltip {
+  position: relative;
+  display: inline-block;
+  margin-right: 5px;
+  height: 100%;
+  width: 100%;
+}
+  
+.tooltip .tooltiptext, .tooltip .tooltiptext2 {
+  visibility: hidden;
+  width: 98%;
+  background-color: lightgray;
+  color: white;
+  font-size: 0.9rem;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  position:absolute; 
+  z-index:1; 
+  left: 33.7%;
+  margin-left:-100px;
+}
+
+.tooltip .tooltiptext {
+  bottom:100%;
+}
+
+.tooltip .tooltiptext2 {
+  top:110%;
+}
+  
+.tooltip:hover .tooltiptext, .tooltip:hover .tooltiptext2 {
+  visibility: visible;
+}
+
+.chat {
+  border-radius: 5px;
+  border: 1px solid white;
+  background-color: lightgrey;
+  color: white;
+}
+
+.code {
+  border-radius: 5px;
+  border: 1px solid lightgrey;
+  background-color: white;
+  color: lightgrey;
+}
