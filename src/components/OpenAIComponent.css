@@ -40,6 +40,7 @@
 }
 
 .container-chat {
+    margin-top: 1.5rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -87,6 +88,7 @@
 }
 
 .answerCode {
+    margin-top: 1.5rem;
     align-self: center;
     height: 40%;
     width: 95%;
