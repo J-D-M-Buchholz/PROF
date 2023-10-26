@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import OpenAI from "openai-api";
 import "./OpenAIComponent.css";
 import Tooltip from "./Tooltip";
@@ -68,7 +68,7 @@ const OpenAIComponent = () => {
     "скажите, пожалуйста, правильный ли синтаксис и что делает код. Если в коде есть ошибки, объясните пожалуйста, что не так и как это сделать правильно. Пожалуйста, не давайте примеры кода, объясняйте это словами.",
     "請告訴我語法是否正確以及代碼的作用。 如果代碼中有錯誤，請說明錯在哪里以及如何正確處理。 請不要給出代碼示例用文字解釋它。",
   ];
-
+  
   const handlePopup = (event) => {
     setPopup(!popup);
   };
@@ -101,6 +101,14 @@ const OpenAIComponent = () => {
     }
   };
 
+  useEffect(() => {
+    const openaiAPIKey = localStorage.getItem("openaiAPIKey");
+    if (openaiAPIKey) {
+      setOpenaiAPIKeyIsValidated(true)
+      setApiKeyInputValue(openaiAPIKey);
+    }
+  }, []);
+  
   const handleMaxTokensChange = (event) => {
     event.preventDefault();
     setMaxTokens(Number(event.target.value));
